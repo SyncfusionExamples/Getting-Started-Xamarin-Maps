@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Map_Sample.MainPage"
+             xmlns:local="clr-namespace:Map_Sample"
+             xmlns:maps="clr-namespace:Syncfusion.SfMaps.XForms;assembly=Syncfusion.SfMaps.XForms">
+
+    <ContentPage.BindingContext>
+        <local:ViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <Grid Margin="20" x:Name="grid">
+
+            <maps:SfMaps x:Name="sfmap"  BackgroundColor="White">
+                <maps:SfMaps.Layers >
+                    <maps:ShapeFileLayer x:Name="layer" Uri="usa_state.shp" ShapeIDPath="State" 
+                                    ItemsSource="{Binding Data}"      ShapeIDTableField="STATE_NAME">
+
+                        <maps:ShapeFileLayer.Markers>
+                            <maps:MapMarker Label = "California" Latitude = "37" Longitude = "-120">
+                            </maps:MapMarker>
+                        </maps:ShapeFileLayer.Markers>
+
+                        <maps:ShapeFileLayer.MarkerSettings>
+                            <maps:MapMarkerSetting IconColor="LimeGreen" IconSize="25" 
+                                                   LabelColor="White" LabelSize="20">
+                            </maps:MapMarkerSetting>
+                        </maps:ShapeFileLayer.MarkerSettings>
+
+                        <maps:ShapeFileLayer.ShapeSettings>
+                            <maps:ShapeSetting ShapeColorValuePath="Candidate" ShapeValuePath="Candidate">
+                                <maps:ShapeSetting.ColorMappings>
+
+                                    <maps:EqualColorMapping Color="#D84444" LegendLabel="Romney"
+                                                            Value = "Romney"></maps:EqualColorMapping>
+                                    <maps:EqualColorMapping Color="#316DB5" LegendLabel="Obama"
+                                                            Value="Obama"></maps:EqualColorMapping>
+                                </maps:ShapeSetting.ColorMappings>
+                            </maps:ShapeSetting>
+                        </maps:ShapeFileLayer.ShapeSettings>
+
+                        <maps:ShapeFileLayer.LegendSettings>
+                            <maps:MapLegendSetting ShowLegend="True" 
+                                                   LegendPosition="30,70">
+                                <maps:MapLegendSetting.IconSize>
+                                    <Size Width="20" Height="20"></Size>
+                                </maps:MapLegendSetting.IconSize>
+                            </maps:MapLegendSetting>
+                        </maps:ShapeFileLayer.LegendSettings>
+
+                    </maps:ShapeFileLayer>
+                </maps:SfMaps.Layers>
+            </maps:SfMaps>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
