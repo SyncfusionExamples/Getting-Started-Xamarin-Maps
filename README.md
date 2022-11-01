@@ -1,6 +1,6 @@
 # Getting Started with Xamarin Maps
 
-This repository contains sample for how to get started with the [Syncfusion Xamarin.Forms Maps](https://help.syncfusion.com/xamarin/maps/getting-started) control. The Xamarin.Forms Maps control provides a graphical representation of geographical data. It is used to represent the statistical data of a particular geographical area on earth by panning and zooming. The maps control supports enhanced data visualization with bubbles and labels using data bound to map.
+This repository contains sample to get started with the [Syncfusion Xamarin.Forms Maps](https://help.syncfusion.com/xamarin/maps/getting-started) control. The Xamarin.Forms Maps control provides a graphical representation of geographical data. It is used to represent the statistical data of a particular geographical area on earth by panning and zooming. The maps control supports enhanced data visualization with bubbles and labels using data bound to map.
 
 ## Syncfusion controls
 
